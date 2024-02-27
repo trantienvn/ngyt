@@ -1,5 +1,5 @@
 const apiUrl = 'http://api.trantien.free.nf/ajax.php';
-const password = '';
+const password = 'guiem';
 const currentUrl = new URL(window.location.href);
 const id = currentUrl.searchParams.get("id");
 
