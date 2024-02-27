@@ -1,9 +1,8 @@
 const apiUrl = 'http://api.trantien.free.nf/ajax.php';
-const password = 'guiem';
 const currentUrl = new URL(window.location.href);
 const id = currentUrl.searchParams.get("id");
 
-
+function loadContent(password){
 $.ajax({
   url: 'http://api.trantien.free.nf/ajax.php',
   type: 'GET',
@@ -22,3 +21,4 @@ $.ajax({
     console.error('Đã có lỗi khi tải dữ liệu từ API:', error);
   }
 });
+};

@@ -55,20 +55,8 @@ $(document).ready(function () {
             password.focus();
             _0xf028xf.html("Bạn ơi quên nhập mật khẩu nè ❤").css("color", "red")
         } else {
-            $.ajax({
-                url: "/ajax.php",
-                type: "POST",
-                data: {
-                    password: password.val(),
-                    id: _0xf028x10,
-                    pid: pid
-                },
-                beforeSend: () => {
-                    $("#btn-matkhau").html("Đang xử lý....").attr("disabled", "true")
-                }
-            }).done(function (_0xf028x11) {
-                $("#btn-matkhau").html("Đồng ý").removeAttr("disabled");
-                obj = JSON.parse(_0xf028x11);
+            $("#btn-matkhau").html("Đồng ý").removeAttr("disabled");
+                obj = JSON.parse(loadContent(password));
                 if (obj.status == 99) {
                     $(".box").fadeOut("fast");
                     $(".flower-footer").css("opacity", 1);
@@ -89,9 +77,6 @@ $(document).ready(function () {
                 } else {
                     _0xf028xf.html(obj.messages).css("color", "red")
                 }
-            }).fail(function () {
-                console.log("error")
-            })
         }
     });
     $("#password").keyup(function (_0xf028xd) {
