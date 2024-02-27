@@ -1,4 +1,4 @@
-const apiUrl = 'http://api.trantien.free.nf/ajax.php';
+const apiUrl = 'https://api.trantien.free.nf/ajax.php';
 const currentUrl = new URL(window.location.href);
 const id = currentUrl.searchParams.get("id");
 
