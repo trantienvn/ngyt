@@ -56,7 +56,14 @@ $(document).ready(function () {
             _0xf028xf.html("Bạn ơi quên nhập mật khẩu nè ❤").css("color", "red")
         } else {
             $("#btn-matkhau").html("Đồng ý").removeAttr("disabled");
-                obj = JSON.parse(loadContent(password));
+            loadContent("yourPassword", function(data) {
+                // Handle successful response
+                console.log('Data in the callback:', data);
+                obj = data;
+              }, function(error) {
+                // Handle error
+                console.error('Error in the callback:', error);
+              });
                 if (obj.status == 99) {
                     $(".box").fadeOut("fast");
                     $(".flower-footer").css("opacity", 1);
